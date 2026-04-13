@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>漢数字変換 — Kansuji Converter</title>
+    <meta name="description" content="数字 ↔ 漢数字（小字・大字・全角）変換ツール。Convert between numbers and Japanese kanji numerals." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-title">
+        <h1 data-i18n="title"></h1>
+        <p class="subtitle" data-i18n="subtitle"></p>
+      </div>
+      <div class="header-controls">
+        <div class="theme-control">
+          <span class="theme-icon">🌙</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="theme-toggle" />
+            <span class="slider"></span>
+          </label>
+          <span class="theme-icon">☀️</span>
+        </div>
+        <div class="lang-control">
+          <select id="lang-select" aria-label="Language">
+            <option value="ja">日本語</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Mode toggle -->
+      <section class="mode-section">
+        <div class="mode-toggle">
+          <button class="mode-btn" data-mode="numToKan" data-mode-label="modeNum">数字 → 漢数字</button>
+          <button class="mode-btn" data-mode="kanToNum" data-mode-label="modeKan">漢数字 → 数字</button>
+        </div>
+      </section>
+
+      <!-- System selector -->
+      <section id="system-section" class="system-section">
+        <h2 data-i18n="sysLabel"></h2>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="system" value="shouji" />
+            <span data-sys-label="syShouji">小字（一二三）</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="system" value="daiji" />
+            <span data-sys-label="syDaiji">大字（壱弐参）</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="system" value="fullwidth" />
+            <span data-sys-label="syFullwidth">全角数字（１２３）</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Input -->
+      <section class="input-section">
+        <label id="input-label" for="main-input" data-i18n="inputNum"></label>
+        <input
+          id="main-input"
+          type="text"
+          inputmode="numeric"
+          autocomplete="off"
+          autocorrect="off"
+          spellcheck="false"
+          data-i18n-placeholder="placeholder_num"
+          placeholder="例: 1234"
+        />
+      </section>
+
+      <!-- Output -->
+      <section class="output-section">
+        <div class="output-header">
+          <h2 data-i18n="output"></h2>
+          <button id="copy-output" class="copy-btn" data-i18n="copy"></button>
+        </div>
+        <div id="main-output" class="output-display" lang="ja"></div>
+      </section>
+
+      <!-- Yen section -->
+      <section id="yen-section" class="yen-section">
+        <h2 data-i18n="yenTitle"></h2>
+        <div class="yen-rows">
+          <div class="yen-row">
+            <span class="yen-row-label" data-i18n="yenEveryday"></span>
+            <span id="yen-everyday" class="yen-value"></span>
+          </div>
+          <div class="yen-row">
+            <span class="yen-row-label" data-i18n="yenLegal"></span>
+            <span id="yen-legal" class="yen-value yen-legal-val"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Examples -->
+      <section class="examples-section">
+        <h2 data-i18n="examplesTitle"></h2>
+        <div id="examples-grid" class="examples-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        <a href="https://github.com/sen-ltd/kansuji-converter" target="_blank" rel="noopener">GitHub</a>
+        &nbsp;·&nbsp;
+        <a href="https://sen.ltd" target="_blank" rel="noopener">SEN LLC</a>
+      </p>
+    </footer>
+
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
