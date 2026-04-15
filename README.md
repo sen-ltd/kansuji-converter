@@ -61,3 +61,10 @@ formatYen(1234, true)      // → '金壱阡弐佰参拾肆円也'
 ## License
 
 MIT © 2026 [SEN LLC (SEN 合同会社)](https://sen.ltd)
+
+<!-- sen-publish:links -->
+## Links
+
+- 🌐 Demo: https://sen.ltd/portfolio/kansuji-converter/
+- 📝 dev.to: https://dev.to/sendotltd/a-kanji-numeral-converter-with-xiao-zi-da-zi-and-yi-er-can-legal-forms-3fco
+<!-- /sen-publish:links -->
